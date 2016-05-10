@@ -12,7 +12,7 @@ class PublicController extends BasePublicController
 {
     public function __construct(TagInterface $tag)
     {
-        parent::__construct($tag);
+        parent::__construct($tag, 'tags');
     }
 
     /**
