@@ -3,11 +3,11 @@
 namespace TypiCMS\Modules\Tags\Composers;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Gate;
 use Maatwebsite\Sidebar\SidebarGroup;
 use Maatwebsite\Sidebar\SidebarItem;
-use TypiCMS\Modules\Core\Composers\BaseSidebarViewComposer;
 
-class SidebarViewComposer extends BaseSidebarViewComposer
+class SidebarViewComposer
 {
     public function compose(View $view)
     {
@@ -15,10 +15,10 @@ class SidebarViewComposer extends BaseSidebarViewComposer
             $group->addItem(trans('tags::global.name'), function (SidebarItem $item) {
                 $item->icon = config('typicms.tags.sidebar.icon', 'icon fa fa-fw fa-tags');
                 $item->weight = config('typicms.tags.sidebar.weight');
-                $item->route('admin.tags.index');
-                $item->append('admin.tags.create');
+                $item->route('admin::index-tags');
+                $item->append('admin::create-tag');
                 $item->authorize(
-                    $this->auth->hasAccess('tags.index')
+                    Gate::allows('index-tags')
                 );
             });
         });
