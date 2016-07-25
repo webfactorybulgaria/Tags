@@ -6,12 +6,33 @@ use Illuminate\Support\Facades\Request;
 use TypiCMS\Modules\Core\Http\Controllers\BaseApiController;
 use TypiCMS\Modules\Tags\Models\Tag;
 use TypiCMS\Modules\Tags\Repositories\TagInterface as Repository;
+use DB;
 
 class ApiController extends BaseApiController
 {
     public function __construct(Repository $repository)
     {
         parent::__construct($repository);
+    }
+
+
+    /**
+     * Get all models
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index($builder = null)
+    {
+        $builder = $this->repository->getModel()->toBase();
+        $builder->select('tags.*');
+        $builder->addSelect(DB::raw('count('.DB::getTablePrefix().'taggables.id) as uses'));
+        $builder->leftJoin('taggables', function($join)
+        {
+            $join->on('tag_id', '=', 'tags.id');
+        });
+        $builder->groupBy('tag');
+
+        return parent::index($builder);
     }
 
     /**
