@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use stdClass;
-use TypiCMS\Modules\Core\Repositories\RepositoriesAbstract;
+use TypiCMS\Modules\Core\Custom\Repositories\RepositoriesAbstract;
 
 class EloquentTag extends RepositoriesAbstract implements TagInterface
 {

@@ -5,8 +5,8 @@ namespace TypiCMS\Modules\Tags\Http\Controllers;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use Illuminate\Support\Facades\Request;
 use TypiCMS;
-use TypiCMS\Modules\Core\Http\Controllers\BasePublicController;
-use TypiCMS\Modules\Tags\Repositories\TagInterface;
+use TypiCMS\Modules\Core\Custom\Http\Controllers\BasePublicController;
+use TypiCMS\Modules\Tags\Custom\Repositories\TagInterface;
 
 class PublicController extends BasePublicController
 {

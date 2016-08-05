@@ -3,15 +3,15 @@
 namespace TypiCMS\Modules\Tags\Models;
 
 use Laracasts\Presenter\PresentableTrait;
-use TypiCMS\Modules\Core\Models\Base;
-use TypiCMS\Modules\History\Traits\Historable;
+use TypiCMS\Modules\Core\Custom\Models\Base;
+use TypiCMS\Modules\History\Custom\Traits\Historable;
 
 class Tag extends Base
 {
     use Historable;
     use PresentableTrait;
 
-    protected $presenter = 'TypiCMS\Modules\Tags\Presenters\ModulePresenter';
+    protected $presenter = 'TypiCMS\Modules\Tags\Custom\Presenters\ModulePresenter';
 
     /**
      * The attributes that are mass assignable.
@@ -39,6 +39,6 @@ class Tag extends Base
      */
     public function projects()
     {
-        return $this->morphedByMany('TypiCMS\Modules\Projects\Models\Project', 'taggable');
+        return $this->morphedByMany('TypiCMS\Modules\Projects\Custom\Models\Project', 'taggable');
     }
 }
