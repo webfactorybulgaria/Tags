@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Tags\Custom\Providers;
+namespace TypiCMS\Modules\Tags\Shells\Providers;
 
 use TypiCMS\Modules\Tags\Providers\RouteServiceProvider as Base;
 

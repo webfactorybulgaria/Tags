@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Tags\Custom\Observers;
+namespace TypiCMS\Modules\Tags\Shells\Observers;
 
 use TypiCMS\Modules\Tags\Observers\TagObserver as Base;
 

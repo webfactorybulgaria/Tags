@@ -4,7 +4,7 @@ namespace TypiCMS\Modules\Tags\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
-use TypiCMS\Modules\Core\Custom\Facades\TypiCMS;
+use TypiCMS\Modules\Core\Shells\Facades\TypiCMS;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'TypiCMS\Modules\Tags\Custom\Http\Controllers';
+    protected $namespace = 'TypiCMS\Modules\Tags\Shells\Http\Controllers';
 
     /**
      * Define the routes for the application.

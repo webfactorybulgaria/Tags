@@ -2,10 +2,10 @@
 
 namespace TypiCMS\Modules\Tags\Http\Controllers;
 
-use TypiCMS\Modules\Core\Custom\Http\Controllers\BaseAdminController;
-use TypiCMS\Modules\Tags\Custom\Http\Requests\FormRequest;
-use TypiCMS\Modules\Tags\Custom\Models\Tag;
-use TypiCMS\Modules\Tags\Custom\Repositories\TagInterface;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BaseAdminController;
+use TypiCMS\Modules\Tags\Shells\Http\Requests\FormRequest;
+use TypiCMS\Modules\Tags\Shells\Models\Tag;
+use TypiCMS\Modules\Tags\Shells\Repositories\TagInterface;
 
 class AdminController extends BaseAdminController
 {
@@ -40,7 +40,7 @@ class AdminController extends BaseAdminController
     /**
      * Edit form for the specified resource.
      *
-     * @param \TypiCMS\Modules\Tags\Custom\Models\Tag $tag
+     * @param \TypiCMS\Modules\Tags\Shells\Models\Tag $tag
      *
      * @return \Illuminate\View\View
      */
@@ -53,7 +53,7 @@ class AdminController extends BaseAdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \TypiCMS\Modules\Tags\Custom\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Tags\Shells\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -67,8 +67,8 @@ class AdminController extends BaseAdminController
     /**
      * Update the specified resource in storage.
      *
-     * @param \TypiCMS\Modules\Tags\Custom\Models\Tag                $model
-     * @param \TypiCMS\Modules\Tags\Custom\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Tags\Shells\Models\Tag                $model
+     * @param \TypiCMS\Modules\Tags\Shells\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */

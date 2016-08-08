@@ -3,9 +3,9 @@
 namespace TypiCMS\Modules\Tags\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
-use TypiCMS\Modules\Core\Custom\Http\Controllers\BaseApiController;
-use TypiCMS\Modules\Tags\Custom\Models\Tag;
-use TypiCMS\Modules\Tags\Custom\Repositories\TagInterface as Repository;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BaseApiController;
+use TypiCMS\Modules\Tags\Shells\Models\Tag;
+use TypiCMS\Modules\Tags\Shells\Repositories\TagInterface as Repository;
 use DB;
 
 class ApiController extends BaseApiController
@@ -70,7 +70,7 @@ class ApiController extends BaseApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param \TypiCMS\Modules\Tags\Custom\Models\Tag $tag
+     * @param \TypiCMS\Modules\Tags\Shells\Models\Tag $tag
      *
      * @return \Illuminate\Http\JsonResponse
      */

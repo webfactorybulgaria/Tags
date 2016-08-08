@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Tags\Custom\Presenters;
+namespace TypiCMS\Modules\Tags\Shells\Presenters;
 
 use TypiCMS\Modules\Tags\Presenters\ModulePresenter as Base;
 

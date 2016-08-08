@@ -5,11 +5,11 @@ namespace TypiCMS\Modules\Tags\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Core\Custom\Facades\TypiCMS;
-use TypiCMS\Modules\Core\Custom\Services\Cache\LaravelCache;
-use TypiCMS\Modules\Tags\Custom\Models\Tag;
-use TypiCMS\Modules\Tags\Custom\Repositories\CacheDecorator;
-use TypiCMS\Modules\Tags\Custom\Repositories\EloquentTag;
+use TypiCMS\Modules\Core\Shells\Facades\TypiCMS;
+use TypiCMS\Modules\Core\Shells\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Tags\Shells\Models\Tag;
+use TypiCMS\Modules\Tags\Shells\Repositories\CacheDecorator;
+use TypiCMS\Modules\Tags\Shells\Repositories\EloquentTag;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -34,7 +34,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias(
             'Tags',
-            'TypiCMS\Modules\Tags\Custom\Facades\Facade'
+            'TypiCMS\Modules\Tags\Shells\Facades\Facade'
         );
     }
 
@@ -45,12 +45,12 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Tags\Custom\Providers\RouteServiceProvider');
+        $app->register('TypiCMS\Modules\Tags\Shells\Providers\RouteServiceProvider');
 
         /*
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Tags\Custom\Composers\SidebarViewComposer');
+        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Tags\Shells\Composers\SidebarViewComposer');
 
         /*
          * Add the page in the view.
@@ -59,7 +59,7 @@ class ModuleProvider extends ServiceProvider
             $view->page = TypiCMS::getPageLinkedToModule('tags');
         });
 
-        $app->bind('TypiCMS\Modules\Tags\Custom\Repositories\TagInterface', function (Application $app) {
+        $app->bind('TypiCMS\Modules\Tags\Shells\Repositories\TagInterface', function (Application $app) {
             $repository = new EloquentTag(new Tag());
             if (!config('typicms.cache')) {
                 return $repository;
