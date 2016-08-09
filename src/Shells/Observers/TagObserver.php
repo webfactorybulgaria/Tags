@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Tags\Shells\Observers;
 
-use TypiCMS\Modules\Tags\Observers\TagObserver as Base;
+use TypiCMS\Modules\Tags\Observers\TagObserver as BaseClass;
 
-class TagObserver extends Base
+class TagObserver extends BaseClass
 {
 
 }

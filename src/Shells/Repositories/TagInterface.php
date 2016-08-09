@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Tags\Shells\Repositories;
 
-use TypiCMS\Modules\Tags\Repositories\TagInterface as Base;
+use TypiCMS\Modules\Tags\Repositories\TagInterface as BaseInterface;
 
-interface TagInterface extends Base
+interface TagInterface extends BaseInterface
 {
 
 }

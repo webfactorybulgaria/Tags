@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Tags\Shells\Models;
 
-use TypiCMS\Modules\Tags\Models\Tag as Base;
+use TypiCMS\Modules\Tags\Models\Tag as BaseClass;
 
-class Tag extends Base
+class Tag extends BaseClass
 {
 
 }
